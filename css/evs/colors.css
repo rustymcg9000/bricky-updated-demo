@@ -1,0 +1,33 @@
+/* Background */
+
+
+/* text color */
+.text-white {color:#FFFFFF !important;}
+.text-black {color:#232323  !important;}
+.bg-white{background-color:#FFFFFF;}
+
+
+.bg-color-primary1{background-color:#12988b;}
+.bg-color-primary2{background-color:#2f2626;}
+.bg-color-primary3{background-color:#f3f3f3;}
+.bg-color-secondary1{background-color:#127b98;}
+.bg-color-secondary2{background-color:#e48049;}
+.bg-color-secondary3{background-color:#312828;}
+
+.color-primary1{color:#12988b !important;}
+.color-primary2{color:#2f2626 !important;}
+.color-primary3{color:#674c45 !important;}
+.color-secondary1{color:#1A936F !important;}
+.color-secondary2{color:#f3a020 !important;}
+.color-secondary3{color:#065143 !important;}
+
+.border-color-primary1{border-color:#12988b !important;}
+.border-color-primary2{border-color:#312828 !important;}
+.border-color-primary3{border-color:#312828 !important;}
+.border-color-secondary1{border-color:#1A936F !important;}
+.border-color-secondary2{border-color:#b3d1e6 !important;}
+.border-color-secondary3{border-color:#312828 !important;}
+
+.bg-gradient-primary1{
+  background: rgb(8,73,71);
+  background: linear-gradient(329deg, rgba(8,73,71,1) 0%, rgba(18,152,139,1) 45%, rgba(186,134,121,0.7483368347338936) 100%);}

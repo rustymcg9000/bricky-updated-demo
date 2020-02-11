@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BrickyEditor - WYSIWYG longrid editor.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery.brickyeditor.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="js/jquery.brickyeditor.js"></script>
+
+  <link rel="stylesheet" href="css/evs/style.css"/>
+  <link rel="stylesheet" href="css/evs/responsive.css"/>
+  <link rel="stylesheet" href="css/evs/colors.css"/>
+  <link rel="stylesheet" href="css/evs/fonts.css"/>
+  <link rel="stylesheet" href="css/evs/position.css"/>
+  <link rel="stylesheet" href="css/evs/button.css"/>
+  <link rel="stylesheet" href="css/evs/box-hover.css"/>
+
+  <script>
+    (function ($) {
+      /**
+       * A jQuery plugin that will position an element relative to another element, regardles of whether or not they share the
+       * same parent in the DOM.
+       *
+       * Note: This must be called within a $(document).ready() call to work properly.  If loading images in the element
+       * that aren't specifically sized via CSS, it may be necessary to call this within a $(window).load() call
+       * depending on the positioning used.
+       *
+       * @param $el       The element off of which relative positioning should be based.
+       * @param top       Defines top positioning, which can be a number, percentage or 'centerline'.
+       * @param left      Defines left positioning, which can be a number, percentage or 'centerline'.
+       * @returns {*}     Returns the original element so that chaining works properly.
+       */
+      $.fn.positionRelativeTo = function ($el, top, left) {
+
+        var isPct = function (value) {
+          return isNaN(value) ? '%' === value.substr(- 1) : false;
+        };
+
+        var convertPercentageToDecimal = function (percentage) {
+          var num = isNaN(percentage) ? percentage.replace('%', '') : percentage;
+          return isNaN(num) ? 0 : parseInt(num, 10) / 100;
+        };
+
+        var getPosition = function ($this) {
+
+          var position = { top: 0, left: 0 };
+
+          // Top
+          if (typeof top === 'undefined') {
+            position.top = $el.offset().top;
+          } else if (!isNaN(top)) {
+            position.top = $el.offset().top + parseInt(top, 10);
+          } else if (isPct(top)) {
+            position.top = $el.offset().top + ($el.outerHeight() * convertPercentageToDecimal(top));
+          } else if ('centerline' === top) {
+            position.top = Math.round(($el.offset().top + ($el.outerHeight() / 2)) - ($this.outerHeight() / 2));
+          }
+
+          if ($(window).scrollTop() > position.top) {
+            position.top = $(window).scrollTop();
+          }
+          // Left
+          if (typeof left === 'undefined') {
+            position.left = $el.offset().left;
+          } else if (!isNaN(left)) {
+            position.left = $el.offset().left + parseInt(left, 10);
+          } else if (isPct(left)) {
+            position.left = $el.offset().left + ($el.outerWidth() * convertPercentageToDecimal(left));
+          } else if ('centerline' === left) {
+            position.left = Math.round(($el.offset().left + ($el.outerWidth() / 2)) - ($this.outerWidth() / 2));
+          }
+
+          return position;
+        };
+
+        return this.each(function () {
+
+          if (1 === $el.length) {
+
+            var $self = $(this);
+
+            $self.detach().appendTo('body').css('position', 'absolute');
+
+            $self.offset(getPosition($self));
+
+            $(window).resize(function () {
+              $self.offset(getPosition($self));
+            });
+
+          }
+
+        });
+
+      };
+
+    })(jQuery);
+  </script>
+  <script>
+      var BrickyEditor;
+      (function (BrickyEditor) {
+        var Fields;
+        (function (Fields) {
+          var LinkField = (function (_super) {
+            __extends(LinkField, _super);
+            function LinkField() {
+              return _super !== null && _super.apply(this, arguments) || this;
+            }
+            LinkField.prototype.bind = function () {
+              var _this = this;
+              var field = this;
+              var $field = this.$field;
+              var data = this.data;
+              $field.on('click', function () {
+                return __awaiter(_this, void 0, void 0, function () {
+                  var fields, file, src, alt, link;
+                  return __generator(this, function (_a) {
+                    switch (_a.label) {
+                      case 0: return [4, BrickyEditor.Editor.UI.modal.promptAsync(field.getPromptParams())];
+                      case 1:
+                        fields = _a.sent();
+                        if (fields != null) {
+                          link = BrickyEditor.HtmlLinkParams.getLinkFromParams(fields);
+                          this.setLink(link);
+                        }
+                        field.select();
+                        return [2];
+                    }
+                  });
+                });
+              });
+            };
+            LinkField.prototype.getPromptParams = function () {
+              var link = this.data.link ? this.data.link : new BrickyEditor.HtmlLinkParams();
+              var linkParams = link.getLinkPromptParams();
+              return linkParams;
+            };
+            LinkField.prototype.setLink = function (url) {
+              if (url && url.href) {
+                this.$field.attr(url.href);
+                this.$field.attr(url.title);
+                this.$field.attr(url.target);
+              }
+              this.updateProperty('link', url);
+            };
+            Object.defineProperty(LinkField.prototype, "isLink", {
+              get: function () {
+                return this._isLink = this._isLink || this.$field.prop('tagName').toLowerCase() === 'a';
+              },
+              enumerable: true,
+              configurable: true
+            });
+            LinkField.prototype.getEl = function () {
+              var $el = _super.prototype.getEl.call(this);
+              var link = this.data.link;
+              if (link && link.href) {
+                var $link = $("<a href='" + link.href + "' title='" + link.title + "' target='" + link.target + "'></a>");
+                $link.append($el);
+                return $link;
+              }
+              return $el;
+            };
+            return LinkField;
+          }(Fields.BaseField));
+          Fields.LinkField = LinkField;
+        })(Fields = BrickyEditor.Fields || (BrickyEditor.Fields = {}));
+      })(BrickyEditor || (BrickyEditor = {}));
+
+      var BrickyEditor;
+      (function (BrickyEditor) {
+        var Fields;
+        (function (Fields) {
+          var TextField = (function (_super) {
+            __extends(TextField, _super);
+            function TextField() {
+              return _super !== null && _super.apply(this, arguments) || this;
+            }
+            TextField.prototype.bind = function () {
+              var _this = this;
+              var field = this;
+              var $field = this.$field;
+              if (!$field.is(BrickyEditor.Selectors.selectorContentEditable)) {
+                $field.attr(BrickyEditor.Selectors.attrContentEditable, 'true');
+              }
+              var html = this.data.html || this.$field.html();
+              this.setHtml(html, false);
+              $field.html(this.data.html);
+              $field
+                .on('blur keyup paste input', function () {
+                  _this.setHtml($field.html());
+                })
+                .on('paste', function (e) {
+                  e.preventDefault();
+                  var ev = e.originalEvent;
+                  var text = ev.clipboardData.getData('text/plain');
+                  document.execCommand("insertHTML", false, text);
+                })
+                .on('click', function (ev) {
+                  field.select();
+                  ev.stopPropagation();
+                  return false;
+                });
+            };
+            TextField.prototype.setHtml = function (value, fireUpdate) {
+              if (fireUpdate === void 0) { fireUpdate = true; }
+              value = value.trim();
+              if (this.$field.html() !== value) {
+                this.$field.html(value);
+              }
+              this.updateProperty('html', value, fireUpdate);
+            };
+            TextField.prototype.getEl = function () {
+              var $el = _super.prototype.getEl.call(this);
+              $el.removeAttr(BrickyEditor.Selectors.attrContentEditable);
+              return $el;
+            };
+            return TextField;
+          }(Fields.BaseField));
+          Fields.TextField = TextField;
+        })(Fields = BrickyEditor.Fields || (BrickyEditor.Fields = {}));
+      })(BrickyEditor || (BrickyEditor = {}));
+
+</script>
+  <script>
+    $(function () {
+      $("#editor").brickyeditor({
+        ignoreHtml: true,
+        blocksUrl: 'data.json',
+        templatesUrl: 'evstemplates.html',
+        onChange: function(data) {
+          console.log(data.html);
+        }
+      });
+      BrickyEditor.Block.prototype.getActions = function () {
+          var block = this;
+          if (block.onDelete === undefined) { return null; }
+
+          if (block.fields.length > 0 && block.fields[0].data.type !== "container") {
+            return [
+              new BrickyEditor.BlockUIAction('ellipsis-h'),
+              new BrickyEditor.BlockUIAction('trash-o', function () { return block.delete(); }),
+              new BrickyEditor.BlockUIAction('copy', function () { return block.clone(); }),
+              new BrickyEditor.BlockUIAction('angle-up', function () { return block.move(-1); }),
+              new BrickyEditor.BlockUIAction('angle-down', function () { return block.move(1); }),
+              new BrickyEditor.BlockUIAction('cog', function () { return block.editSettings(); }),
+              new BrickyEditor.BlockUIAction('edit', function () { return block.editAttributes(); }),
+              // We would possibly not need this final 'edit' if we are dealing with the RichText control
+            ];
+          }
+          else {
+            return [
+              new BrickyEditor.BlockUIAction('ellipsis-h'),
+              new BrickyEditor.BlockUIAction('trash-o', function () { return block.delete(); }),
+              new BrickyEditor.BlockUIAction('angle-up', function () { return block.move(-1); }),
+              new BrickyEditor.BlockUIAction('angle-down', function () { return block.move(1); }),
+              new BrickyEditor.BlockUIAction('cog', function () { return block.editSettings(); }),
+            ];
+          }
+      };
+
+      BrickyEditor.Block.prototype.getNodeToClone = function (template) {
+        var block = this;
+        console.log('getNodeToClone - this is where we would create our component and load its view');
+        var node = template.$html.clone();
+
+        return node;
+      }
+
+      BrickyEditor.Block.prototype.editSettings = function () {
+        var block = this;
+        console.log('editSettings');
+      };
+
+      BrickyEditor.Block.prototype.editAttributes = function () {
+        console.log('editAttributes');
+      };
+
+      BrickyEditor.Fields.ImageField.prototype.getPromptParams = function () {
+        var params = [
+          new BrickyEditor.Prompt.PromptParameter('src', BrickyEditor.EditorStrings.imageFieldLinkTitle, this.data.url, BrickyEditor.EditorStrings.imageFieldLinkPlaceholder),
+          new BrickyEditor.Prompt.PromptParameterImage('file', BrickyEditor.EditorStrings.imageFieldUploadTitle, this.data.file, BrickyEditor.EditorStrings.imageFieldUploadButton),
+          new BrickyEditor.Prompt.PromptParameter('alt', BrickyEditor.EditorStrings.imageFieldAltTitle, this.data.alt, BrickyEditor.EditorStrings.imageFieldAltPlaceholder),
+          new BrickyEditor.Prompt.PromptParameter(null, BrickyEditor.EditorStrings.imageFieldUrlSubtitle, null, null),
+        ];
+        if (this.data.allowlink !== undefined && this.data.allowlink === "false") {
+          return params;
+        }
+        var link = this.data.link ? this.data.link : new BrickyEditor.HtmlLinkParams();
+        var linkParams = link.getLinkPromptParams();
+        return params.concat(linkParams);
+      };
+
+      $('.bre-tools-templates')
+        .on('mouseenter', '.bre-template.expand-on-hover', function() {
+          let img = $(this).find('img');
+          let imgSrc = $(img).attr('src');
+          $('body').append('<div class="half-width-zoom"><img src="' + imgSrc + '"></div>');
+          let $zoom = $('div.half-width-zoom');
+          var width = $zoom.outerWidth();
+          var height = $zoom.outerHeight();
+
+          $zoom.positionRelativeTo($(this),-height,-width).css({
+              width: width + "px",
+              height: height + "px"
+          }).show();
+        })
+        .on('mouseleave', '.bre-template.expand-on-hover', function () {
+          $('div.half-width-zoom').remove();
+        });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <p>Click on a container from the right hand side menu, then select a cell and then click a component to add it to the cell</p>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="editor"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>

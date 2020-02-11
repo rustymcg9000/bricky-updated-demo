@@ -1,0 +1,13 @@
+/* ===================================
+    Carousel Css
+====================================== */
+
+.carousel-01 {
+    height: 300px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.carousel-01 .carousel-indicators li {
+    background: #312828;
+}

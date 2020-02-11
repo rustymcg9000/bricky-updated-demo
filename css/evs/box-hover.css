@@ -1,0 +1,1224 @@
+/* ===================================
+    Box Hover Css
+====================================== */
+.box-hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+.box-hover-02:hover:before, .box-hover-04:after, .box-hover-04:before, .box-hover-05:after, .box-hover-05:before,
+.box-hover-06:after, .box-hover-06:before, .box-hover-08:after, .box-hover-08:before {
+    content: ""
+}
+
+.box-hover-01, .box-hover-02, .box-hover-03, .box-hover-04, .box-hover-05, .box-hover-06,
+.box-hover-06 .icon li a, .box-hover-08 {
+    overflow: hidden
+}
+
+.box-hover img {
+    width: 100%;
+    height: auto;
+    transition: all .3s
+}
+
+.box-hover-01 .icon li a, .box-hover-04 .icon li a:hover, .box-hover-05 .icon li a:hover, .box-hover-06 .icon li a {
+    border-radius: 50%
+}
+
+.box-hover-05 .icon a:hover {
+    text-decoration: none;
+    animation: animate-hover .5s;
+    transition: all .3s
+}
+
+@keyframes animate {
+    0%, 100% {
+        opacity: 1
+    }
+}
+
+@keyframes animate-hover {
+    0% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, .3)
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, .3)
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .3)
+    }
+}
+
+/*.box-hover-01:after,.box-hover-01:before {content:""}*/
+/*
+ * Box Hover 01
+*/
+
+.box-hover-01 {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    position: relative;
+}
+
+.box-hover-01 .box-content {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    transition: all .3s;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center
+}
+
+.box-hover-01:hover img {
+    transform: scale(1.2);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px)
+}
+
+.box-hover-01:hover .box-content {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, .3);
+    opacity: 1;
+    transition: all .3s
+}
+
+.box-hover-01 .title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 5px;
+    line-height: 40px;
+    padding: 0;
+    letter-spacing: 0;
+}
+
+.box-hover-01 .description {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 20px
+}
+
+.box-hover-01 .icon {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.box-hover-01 .icon li {
+    display: inline-block;
+    margin: 0 10px 0 0
+}
+
+.box-hover-01 .icon li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: none;
+    transition: all .5s
+}
+
+.box-hover-01 .icon a:hover {
+    text-decoration: none;
+    animation: animate-hover .5s;
+    transition: all .3s
+}
+
+@keyframes animate {
+    0%, 100% {
+        opacity: 1
+    }
+}
+
+@keyframes animate-hover {
+    0% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, .3)
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, .3)
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .3)
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-01 {
+        margin-bottom: 30px
+    }
+
+    .box-hover-01 .box-content {
+        padding: 10px
+    }
+
+    .box-hover-01 .description {
+        margin-bottom: 10px
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .box-hover-01 .title {
+        margin: 0
+    }
+}
+
+/*
+ * Box Hover 02
+*/
+
+.box-hover-02 {
+    position: relative
+}
+
+.box-hover-02 .box-content, .box-hover-02:after, .box-hover-02:before {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    transition: all .3s
+}
+
+.box-hover-02:after, .box-hover-02:before {
+    display: block;
+    background: rgba(18, 152, 139, 0.5);
+    top: 0%;
+    bottom: 0%;
+    z-index: 1;
+    transform: scale(0, 1)
+}
+
+.box-hover-02:after {
+    top: 10.8%;
+    bottom: 10.8%;
+    transform: scale(1, 0)
+}
+
+.box-hover-02:hover:before {
+    transform: scale(1);
+    animation: animate 1.5s
+}
+
+.box-hover-02:hover img {
+    transform: scale(1.2);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px)
+}
+
+.box-hover-02 .box-content {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 10%;
+    opacity: 0;
+    z-index: 2;
+    text-align: center
+}
+
+.box-hover-02:hover .box-content {
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, .3);
+    opacity: 1;
+    transition: all .3s
+}
+
+.box-hover-02 .title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 5px
+}
+
+.box-hover-02 .description {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 20px
+}
+
+.box-hover-02 .icon {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.box-hover-02 .icon li {
+    display: inline-block;
+    margin: 0 10px 0 0
+}
+
+.box-hover-02 .icon li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: none;
+    transition: all .5s
+}
+
+.box-hover-02 .icon a:hover {
+    text-decoration: none;
+    animation: animate-hover .5s;
+    transition: all .3s
+}
+
+@keyframes animate {
+    0%, 100% {
+        opacity: 1
+    }
+}
+
+@keyframes animate-hover {
+    0% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, .3)
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, .3)
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .3)
+    }
+}
+
+/*
+ * Box Hover 03
+*/
+
+.box-hover-03 {
+    position: relative;
+}
+
+.box-hover-03 .box-content, .box-hover-03:after {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    transition: all .3s
+}
+
+.box-hover-03:before {
+    content: "";
+    border: 1px solid #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+
+.box-hover-03:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 40, 40, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .35s ease 0s
+}
+
+.box-hover-03:hover:after {
+    opacity: 1
+}
+
+.box-hover-03 .box-content:after, .box-hover-03 .box-content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all .7s ease 0s
+}
+
+.box-hover-03 .box-content:before {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-top: 1px solid rgba(255, 255, 255, .5)
+}
+
+.box-hover-03 .box-content:after {
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-right: 1px solid rgba(255, 255, 255, .5)
+}
+
+.box-hover-03 img {
+    width: 100%;
+    height: auto;
+    transition: all .5s
+}
+
+.box-hover-03:hover img {
+    transform: scale(1.2);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px)
+}
+
+.box-hover-03 .box-content {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 10%;
+    opacity: 1;
+    z-index: 2;
+    text-align: center;
+    margin: 0 10%;
+}
+
+.box-hover-03:hover .box-content {
+    top: 50%;
+    transform: translateY(-50%) scale(1.2);
+}
+
+.box-hover-03 .title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0 0 5px;
+    line-height: 40px;
+}
+
+.box-hover-03 .description {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 20px
+}
+
+.box-hover-03 .icon {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.box-hover-03 .icon li {
+    display: inline-block;
+    margin: 0 10px 0 0
+}
+
+.box-hover-03 .icon li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: none;
+    transition: all .5s
+}
+
+.box-hover-03 .icon a:hover {
+    text-decoration: none;
+    animation: animate-hover .5s;
+    transition: all .3s
+}
+
+@keyframes animate {
+    0%, 100% {
+        opacity: 1
+    }
+}
+
+@keyframes animate-hover {
+    0% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, .3)
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, .3)
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, .3)
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-03 {
+        margin-bottom: 30px
+    }
+
+    .box-hover-03 .box-content {
+        padding: 10px
+    }
+
+    .box-hover-03 .description {
+        margin-bottom: 10px
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .box-hover-03 .title {
+        margin: 0
+    }
+}
+
+/*
+ * Box Hover 04
+*/
+
+.box-hover-04 {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    position: relative;
+    overflow: hidden
+}
+
+.box-hover-04 .box-content, .box-hover-04:after, .box-hover-04:before {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    transition: all .3s
+}
+
+.box-hover-04:after, .box-hover-04:before {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    top: 10%;
+    bottom: 10%;
+    z-index: 1;
+    transform: scale(0, 1)
+}
+
+.box-hover-04:after {
+    top: 10.8%;
+    bottom: 10.8%;
+    transform: scale(1, 0)
+}
+
+.box-hover-04:hover:after, .box-hover-04:hover:before {
+    transform: scale(1);
+    animation: animate 1.5s
+}
+
+.box-hover-04:hover:before {
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff
+}
+
+.box-hover-04:hover img {
+    transform: scale(1.2);
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px)
+}
+
+.box-hover-04 .box-content {
+    padding: 30px 10px;
+    top: 10%;
+    bottom: 10%;
+    opacity: 0;
+    z-index: 2;
+    text-align: center
+}
+
+.box-hover-04:hover .box-content {
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, .3);
+    opacity: 1;
+    transition: all .3s
+}
+
+.box-hover-04 .title {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(228, 128, 73, 1);
+    margin: 0 0 5px
+}
+
+.box-hover-04 .post {
+    display: block;
+    margin: 0 0 5px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .8)
+}
+
+.box-hover-04 .description {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 20px
+}
+
+.box-hover-04 .icon {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.box-hover-04 .icon li {
+    display: inline-block;
+    margin: 0 10px 0 0
+}
+
+.box-hover-04 .icon li a {
+    text-align: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: rgba(228, 128, 73, 1);
+    transition: all .5s
+}
+
+.box-hover-04 .icon a:hover {
+    text-decoration: none;
+    animation: animate-hover .5s;
+    transition: all .3s
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-04 {
+        margin-bottom: 30px
+    }
+
+    .box-hover-04 .box-content {
+        padding: 10px
+    }
+
+    .box-hover-04 .description {
+        margin-bottom: 10px
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .box-hover-04 .title {
+        margin: 0
+    }
+}
+
+/*
+ * Box Hover 05
+*/
+
+
+.box-hover-05 {
+    position: relative
+}
+
+.box-hover-05:before {
+    width: 0;
+    height: 200%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: -250px;
+    bottom: 0;
+    transform: skewX(-36deg);
+    transition: all .5s ease 0s
+}
+
+.box-hover-05:hover:before {
+    width: 200%
+}
+
+.box-hover-05 img {
+    width: 100%;
+    height: auto
+}
+
+.box-hover-05 .box-content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all .3s ease 0s
+}
+
+.box-hover-05 .icon, .box-hover-06 .icon {
+    list-style: none;
+    padding: 0
+}
+
+.box-hover-05:hover .box-content {
+    transform: scale(1)
+}
+
+.box-hover-05 .title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px
+}
+
+.box-hover-05 .description {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 20px 20px
+}
+
+.box-hover-05 .icon {
+    margin: 0
+}
+
+.box-hover-05 .icon li {
+    display: inline-block
+}
+
+.box-hover-05 .icon li a {
+    text-align: center;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    background: #fff;
+    color: rgba(18, 152, 139, 1);
+    margin-right: 10px;
+    transition: all .3s ease 0s
+}
+
+.box-hover-05 .icon, .box-hover-05 .icon li {
+    display: inline-block
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-05 {
+        margin-bottom: 30px
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .box-hover-05:before {
+        left: -400px
+    }
+
+    .box-hover-05:hover:before {
+        width: 300%
+    }
+}
+
+/*
+ * Box Hover 06
+*/
+
+.box-hover-06 {
+    background: #444;
+    position: relative
+}
+
+.box-hover-06:after, .box-hover-06:before {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #10a5b8;
+    position: absolute;
+    top: -80px;
+    left: 15px;
+    opacity: 0;
+    z-index: 1;
+    transition: all .35s ease
+}
+
+.box-hover-06:after {
+    top: auto;
+    left: auto;
+    bottom: -80px;
+    right: 15px
+}
+
+.box-hover-06:hover:after, .box-hover-06:hover:before {
+    opacity: .75;
+    transform: scale(8);
+    transition-delay: .15s
+}
+
+.box-hover-06 img {
+    width: 100%;
+    height: auto;
+    transition: all .35s ease-out 0s
+}
+
+.box-hover-06:hover img {
+    opacity: .4
+}
+
+.box-hover-06 .icon {
+    margin: 0;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 2;
+    transform: scale(0);
+    transition: all .35s ease-out
+}
+
+.box-hover-06 .icon, .box-hover-06 .icon li {
+    display: inline-block
+}
+
+.box-hover-06:hover .icon {
+    transform: scale(1);
+    transition-delay: .15s
+}
+
+.box-hover-06 .icon li a {
+    text-align: center;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: #fff;
+    font-size: 18px;
+    color: #444;
+    margin-right: 10px;
+    position: relative;
+    transition: all .5s ease 0s
+}
+
+.box-hover-06 .icon li a:hover {
+    background: #444;
+    color: #fff
+}
+
+.box-hover-06 .box-content {
+    padding: 20px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1
+}
+
+.box-hover-06 .title {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 5px;
+    opacity: 0;
+    transform: translate(-20px, -20px);
+    transition: all .35s ease-out
+}
+
+.box-hover-06:hover .title {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-delay: .15s
+}
+
+.box-hover-06 .description {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0;
+    transform: translate(-20px, -20px);
+    transition: all .35s ease-out
+}
+
+.box-hover-06:hover .description {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-delay: .15s
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-06 {
+        margin-bottom: 30px
+    }
+}
+
+/*
+ * Box Hover 07
+*/
+
+.box-hover-07 {
+    position: relative
+}
+
+.box-hover-07:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .35s ease 0s
+}
+
+.box-hover-07:hover:before {
+    opacity: 1
+}
+
+.box-hover-07 img {
+    width: 100%;
+    height: auto
+}
+
+.box-hover-07 .box-content {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    text-align: center
+}
+
+.box-hover-07 .box-content:after, .box-hover-07 .box-content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all .7s ease 0s
+}
+
+.box-hover-07 .box-content:before {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    transform: scale(0, 1);
+    transform-origin: 0 0 0
+}
+
+.box-hover-07 .box-content:after {
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-right: 1px solid rgba(255, 255, 255, .5);
+    transform: scale(1, 0);
+    transform-origin: 100% 0 0
+}
+
+.box-hover-07:hover .box-content:after, .box-hover-07:hover .box-content:before {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: .15s
+}
+
+.box-hover-07 .title {
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 700;
+    color: #fff;
+    margin: 15px 0;
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+    transition: transform .5s ease 0s
+}
+
+.box-hover-07:hover .title {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+}
+
+.box-hover-07 .description {
+    font-size: 14px;
+    color: #fff;
+    padding: 10px;
+    background: rgba(228, 128, 73, 1);
+    opacity: 0;
+    border-radius: 0 19px;
+    transform: translate3d(0, -50px, 0);
+    transition: all .7s ease 0s
+}
+
+.box-hover-07 .icon {
+    padding: 0;
+    list-style: none
+}
+
+.box-hover-07:hover .description {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: .15s
+}
+
+.box-hover-07 .icon {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all .7s ease 0s
+}
+
+.box-hover-07:hover .icon {
+    bottom: 20px;
+    opacity: 1;
+    transition-delay: .15s
+}
+
+.box-hover-07 .description, .box-hover-07 .icon li {
+    display: inline-block
+}
+
+.box-hover-07 .icon li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #fff;
+    border-radius: 0 16px;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 5px;
+    transition: all .4s ease 0s
+}
+
+.box-hover-07 .icon li a:hover {
+    background: rgba(228, 128, 73, 1);
+    border-color: rgba(228, 128, 73, 1)
+}
+
+@media only screen and (max-width: 990px) {
+    .box-hover-07 {
+        margin-bottom: 30px
+    }
+}
+
+/*
+ * Box Hover 08
+*/
+
+.box-hover-08 {
+    position: relative
+}
+
+.box-hover-08:after, .box-hover-08:before {
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 33, 47, .9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease 0s
+}
+
+.box-hover-08:after {
+    background: rgba(255, 255, 255, .3);
+    border: 2px solid rgba(18, 152, 139, 1);
+    top: 0;
+    left: 170%;
+    opacity: 1;
+    z-index: 1;
+    transform: skewX(45deg);
+    transition: all 1s ease 0s
+}
+
+.box-hover-08:hover:before {
+    opacity: 1
+}
+
+.box-hover-08:hover:after {
+    left: -170%
+}
+
+.box-hover-08 img {
+    width: 100%;
+    height: auto
+}
+
+.box-hover-08 .box-content {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    transition: all .5s ease 0s
+}
+
+.box-hover-08:hover .box-content {
+    bottom: 30%
+}
+
+.box-hover-08 .title {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px
+}
+
+.box-hover-08 .description {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin: 0 20px 20px;
+}
+
+.box-hover-08 .icon {
+    margin: 0
+}
+
+.box-hover-08 .icon li {
+    display: inline-block
+}
+
+.box-hover-08 .icon li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    background: rgba(18, 152, 139, 1);
+    font-size: 18px;
+    color: #fff;
+    margin-right: 10px;
+    transition: all .5s ease 0s
+}
+
+.box-hover-08 .icon li a:hover {
+    transform: rotate(360deg)
+}
+
+@media only screen and (max-width: 990px) {
+    .box {
+        margin-bottom: 30px
+    }
+}
+
+/*
+ * Mobile Version
+*/
+@media (max-width: 767px) {
+    .box-hover-04:after, .box-hover-04:before, .box-hover-04:hover:after, .box-hover-04:hover:before,
+    .box-hover-05:hover:after, .box-hover-05:hover:before,
+    .box-hover-06:hover:after, .box-hover-06:hover:before,
+    .box-hover-07:after, .box-hover-07:before ,
+    .box-hover-07 .box-content:after, .box-hover-07 .box-content:before,
+    .box-hover-08:after, .box-hover-08:before{
+        display: none;
+    }
+    .box-hover .box-content, .box-hover:hover .box-content {
+        opacity: 1 !important;
+        position: relative;
+        left: 0;
+        right: 0;
+        transition: none;
+        top: 100%;
+        transform: none !important;
+        z-index: 2;
+        text-align: center;
+        padding: 20px 10px;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .box-hover-01 .box-content, .box-hover-03 .box-content, .box-hover-04 .box-content, .box-hover-08 .box-content {
+        background: #2f2626;
+    }
+
+    .box-hover-02 .box-content, .box-hover-07 .box-content  {
+        background: rgba(18, 152, 139, 1)
+    }
+
+    .box-hover-05 .box-content {
+        background: rgba(228, 128, 73, 1)
+    }
+
+    .box-hover:hover img {
+        transform: none !important;
+        filter: none !important;
+        -moz-filter: none !important;
+        -webkit-filter: none !important;
+    }
+
+    .box-hover-03:after, .box-hover-03:hover:after {
+        opacity: 0
+    }
+
+    .box-hover-03 .box-content:after, .box-hover-03 .box-content:before {
+        content: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: all .7s ease 0s
+    }
+
+    .box-hover-03 .box-content:before, .box-hover-03 .box-content:after, .box-hover-03:before {
+        border: none !important;
+        width: 0;
+        height: 0
+    }
+
+    .box-hover-02:after, .box-hover-02:before {
+        background: none;
+    }
+
+    .box-hover-02:after {
+        top: 10.8%;
+        bottom: 10.8%;
+        transform: scale(1, 0)
+    }
+
+    .box-hover:hover:before {
+        transform: none !important;
+        animation: animate none !important;
+    }
+
+    .box-hover-04:hover .box-content {
+        box-shadow: none;
+        opacity: 0;
+        transition: 0s
+    }
+
+    .box-hover-06 .title, .box-hover-06 .description, .box-hover-06:hover img {
+        opacity: 1;
+        transform: none;
+    }
+
+    .box-hover-06 {
+        text-align: center
+    }
+
+    .box-hover-06 img {
+        width: 100%;
+        height: auto;
+        transition: all .35s ease-out 0s
+    }
+
+    .box-hover-06 .icon {
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        transform: none;
+        transition: none;
+        text-align: center;
+        right: 0;
+    }
+
+    .box-hover-01 .icon li:last-child, .box-hover-04 .icon li:last-child,  .box-hover-05 .icon li:last-child a , .box-hover-06 .icon li:last-child a {
+        margin-right: 0;
+    }
+
+    .box-hover-06 .icon, .box-hover-06 .icon li {
+        display: inline-block
+    }
+
+    .box-hover-06:hover .icon {
+        transform: none;
+        transition-delay: 0s;
+    }
+
+    .box-hover-07 .box-content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center
+    }
+
+    .box-hover-07 .title , .box-hover-07 .description,  .box-hover-07 .icon {
+        opacity: 1;
+        transform: none;
+        position: relative;
+    }
+
+    .box-hover-07:hover .icon {
+        bottom: 0;
+    }
+
+    .box-hover-08 .icon {
+        padding-left: 0;
+    }
+
+}

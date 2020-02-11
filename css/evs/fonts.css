@@ -1,0 +1,85 @@
+/* ===================================
+    Google font
+====================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {margin:0 0 25px; padding:0; letter-spacing: 0; font-weight: 400;}
+h1 {font-size:70px; line-height: 70px;}
+h2 {font-size:55px; line-height:60px}
+h3 {font-size:48px; line-height:54px}
+h4 {font-size:40px; line-height:46px}
+h5 {font-size:32px; line-height:40px}
+h6 {font-size:25px; line-height:30px}
+
+/* text size */
+.text-extra-small {font-size:11px; line-height:14px}
+.text-small {font-size:12px; line-height:20px}
+.text-medium {font-size:16px; line-height:23px}
+.text-large {font-size:18px; line-height:26px}
+.text-extra-large {font-size: 20px; line-height:26px}
+.title-large {font-size: 100px; line-height:95px}
+.title-extra-large {font-size: 130px; line-height:120px}
+
+/* letter spacing */
+.no-letter-spacing {letter-spacing:0px}
+.letter-spacing-1 {letter-spacing:1px}
+.letter-spacing-2 {letter-spacing:2px}
+.letter-spacing-3 {letter-spacing:3px}
+.letter-spacing-4 {letter-spacing:4px}
+.letter-spacing-5 {letter-spacing:5px}
+.letter-spacing-6 {letter-spacing:6px}
+.letter-spacing-7 {letter-spacing:7px}
+.letter-spacing-8 {letter-spacing:8px}
+.letter-spacing-9 {letter-spacing:9px}
+.letter-spacing-10 {letter-spacing:10px}
+.letter-spacing-minus-1 {letter-spacing:-1px}
+.letter-spacing-minus-2 {letter-spacing:-2px}
+.letter-spacing-minus-3 {letter-spacing:-3px}
+.letter-spacing-minus-4 {letter-spacing:-4px}
+.letter-spacing-minus-5 {letter-spacing:-5px}
+.letter-spacing-minus-6 {letter-spacing:-6px}
+.letter-spacing-minus-7 {letter-spacing:-7px}
+.letter-spacing-minus-8 {letter-spacing:-8px}
+.letter-spacing-minus-9 {letter-spacing:-9px}
+.letter-spacing-minus-10 {letter-spacing:-10px}
+
+/* font weight */
+.font-weight-100 {font-weight:100}
+.font-weight-200 {font-weight:200}
+.font-weight-300 {font-weight:300}
+.font-weight-400 {font-weight:400}
+.font-weight-500 {font-weight:500}
+.font-weight-600 {font-weight:600}
+.font-weight-700 {font-weight:700}
+.font-weight-800 {font-weight:800}
+.font-weight-900 {font-weight:900}
+
+/* line height */
+.line-height-10 {line-height:10px}
+.line-height-13 {line-height:13px}
+.line-height-18 {line-height:18px}
+.line-height-20 {line-height:20px}
+.line-height-24 {line-height:24px}
+.line-height-22 {line-height:22px}
+.line-height-26 {line-height:26px}
+.line-height-28 {line-height:28px}
+.line-height-30 {line-height:30px}
+.line-height-35 {line-height:35px}
+.line-height-40 {line-height:40px}
+.line-height-45 {line-height:45px}
+.line-height-50 {line-height:50px}
+.line-height-55 {line-height:55px}
+.line-height-60 {line-height:60px}
+.line-height-65 {line-height:65px}
+.line-height-70 {line-height:70px}
+.line-height-75 {line-height:75px}
+.line-height-80 {line-height:80px}
+.line-height-85 {line-height:85px}
+.line-height-90 {line-height:90px}
+.line-height-95 {line-height:95px}
+.line-height-100 {line-height:100px}
+.line-height-110 {line-height:110px}
+.line-height-120 {line-height:120px}

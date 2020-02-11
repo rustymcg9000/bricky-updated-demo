@@ -1,0 +1,432 @@
+<style>
+    .bre-template>h1,
+    .bre-template>h2,
+    .bre-template>h3,
+    .bre-template>h4,
+    .bre-template>h5,
+    .bre-template>h6,
+    .bre-template>p,
+    .bre-template>blockquote {
+        margin-bottom: 0;
+    }
+
+    .bre-template>mb-4,
+    .bre-template>mt-4 {
+        margin: 0;
+    }
+
+    .bre-template>.row>.col-md-6 {
+        width: 50% !important;
+    }
+
+    .bre-template>.row>.col-md-4 {
+        width: 33.33% !important;
+    }
+
+    .bre-block-tools {
+        margin: 0;
+    }
+
+    .bre-tools .bre-tools-templates .bre-template-group {
+        font-size: initial;
+        color: black;
+    }
+    .bre-tools .bre-tools-templates .bre-template-group::after {
+        font-family: FontAwesome;
+        content: "\f053";
+        float:right;
+    }
+    .bre-tools .bre-tools-templates .bre-template-group.collapsed::after {
+        font-family: FontAwesome;
+        content: "\f078";
+        float:right;
+    }
+
+    .bre-tools .bre-tools-templates .bre-template.half-width {
+        display: inline;
+        width: 44%;
+        float: left;
+    }
+    .half-width-zoom {
+        position: absolute;
+        z-index: 200;;
+    }
+</style>
+
+<div class="bre-template-group" title="Containers">
+
+    <div class="bre-template" data-name="Columns-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" data-bre-field='{ "name" : "col1", "type": "container" }'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Columns-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-bre-field='{ "name" : "col1", "type": "container" }'></div>
+                <div class="col-md-6" data-bre-field='{ "name" : "col2", "type": "container" }'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Columns-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" data-bre-field='{ "name" : "col1", "type": "container" }'></div>
+                <div class="col-md-4" data-bre-field='{ "name" : "col2", "type": "container" }'></div>
+                <div class="col-md-4" data-bre-field='{ "name" : "col3", "type": "container" }'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Columns-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" data-bre-field='{ "name" : "col1", "type": "container" }'></div>
+                <div class="col-md-3" data-bre-field='{ "name" : "col2", "type": "container" }'></div>
+                <div class="col-md-3" data-bre-field='{ "name" : "col3", "type": "container" }'></div>
+                <div class="col-md-3" data-bre-field='{ "name" : "col4", "type": "container" }'></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bre-template-group" title="Headers">
+    <div class="bre-template" data-name="Display Heading 1">
+        <h1 class="display-2" data-bre-field='{ "name" : "text", "type": "html" }'>Header</h1>
+    </div>
+
+    <div class="bre-template" data-name="Heading 1">
+        <h1 data-bre-field='{ "name" : "text", "type": "html" }'>Header</h1>
+    </div>
+
+    <div class="bre-template" data-name="Heading 2">
+        <h2 data-bre-field='{ "name" : "text", "type": "html" }'>Header</h2>
+    </div>
+
+    <div class="bre-template" data-name="Heading 3">
+        <h3 data-bre-field='{ "name" : "text", "type": "html" }'>Header</h3>
+    </div>
+</div>
+
+<div class="bre-template-group" title="Text">
+
+    <div class="bre-template" data-name="Paragraph Lead">
+        <p class="lead" data-bre-field='{ "name" : "text", "type": "html" }'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
+
+    <div class="bre-template" data-name="Paragraph">
+        <p data-bre-field='{ "name" : "text", "type": "html" }'>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+
+    <div class="bre-template" data-name="Blockquote">
+        <blockquote class="blockquote">
+            <p class="mb-0" data-bre-field='{ "name" : "text", "type": "html" }'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+                <span data-bre-field='{ "name" : "author", "type": "html" }'>Someone famous in </span>
+                <cite data-bre-field='{ "name" : "source", "type": "html" }'>Source Title</cite>
+            </footer>
+        </blockquote>
+    </div>
+
+    <div class="bre-template" data-name="Blockquote Reverse">
+        <blockquote class="blockquote blockquote-reverse">
+            <p class="mb-0" data-bre-field='{ "name" : "text", "type": "html" }'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+                <span data-bre-field='{ "name" : "author", "type": "html"}'>Someone famous in</span>
+                <cite data-bre-field='{ "name" : "source", "type": "html" }'>Source Title</cite>
+            </footer>
+        </blockquote>
+    </div>
+</div>
+
+<div class="bre-template-group" title="Cards">
+    <div class="bre-template" data-name="Card 1" data-class="half-width expand-on-hover">
+    <div class="bre-template-preview"><img src="assets/evs/templates/Card1.PNG"></div>
+        <div class="col-md-12 box-shadow no-padding">
+            <div class="text-left">
+                <img class="dummy" src="assets/evs/g2.jpg" alt="" data-bre-field='{ "name" : "content", "type": "image" }' />
+                <div class="col-3-area">
+                    <span class="sub-title-6 text-uppercase color-primary3"
+                        data-bre-field='{ "name" : "content", "type": "html" }'>17 july 2017 | by
+                        <a href="#" class="">Lorem Ipsum</a></span>
+                    <h4 class="sub-title-3 text-uppercase text-black"
+                        data-bre-field='{ "name" : "content", "type": "html" }'>
+                        Lorem Ipsum has been standard dummy.
+                    </h4>
+                    <p data-bre-field='{ "name" : "content", "type": "html" }'>
+                        Lorem Ipsum is simply text of the printing and typesetting
+                        industry. Lorem Ipsum has been standard dummy.
+                    </p>
+                    <p class="text-center  no-margin" data-bre-field='{ "name" : "content", "type": "html" }'>
+                        <a href="#" class="btn btn-small btn-rounded">Lorem Ipsum</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Card 2"  data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Card2.PNG"></div>
+        <div class="col-md-12 no-padding box-shadow">
+            <div class="text-left">
+                <img class="dummy" src="assets/evs/g4.jpg" alt="" data-bre-field='{ "name" : "content", "type": "image" }' />
+                <div class="col-3-area">
+                    <span class="sub-title-6 text-uppercase color-primary3"
+                        data-bre-field='{ "name" : "content", "type": "html" }'>17 july 2017 | by
+                        <a href="#" class="">Lorem Ipsum</a></span>
+                    <h4 class="sub-title-3 text-uppercase" data-bre-field='{ "name" : "content", "type": "html" }'>
+                        Lorem Ipsum has been standard dummy.
+                    </h4>
+                    <p data-bre-field='{ "name" : "content", "type": "html" }'>
+                        Lorem Ipsum is simply text of the printing and typesetting
+                        industry. Lorem Ipsum has been standard dummy.
+                    </p>
+                    <p class="text-center no-margin" data-bre-field='{ "name" : "content", "type": "html" }'>
+                        <a href="#" class="btn btn-small btn-rounded bg-color-primary1 text-white">Lorem Ipsum</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Card 3" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Card3.PNG"></div>
+        <div class="card box-shadow col-bottom-3-area">
+            <blockquote class="blockquote col-4-area card-body">
+                <h4 class="sub-title-2 text-uppercase text-black border-bottom border-width-2 border-color-primary1"
+                    data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem Ipsum has been standard dummy.
+                </h4>
+                <p data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Integer posuere erat a ante. Lorem ipsum dolor sit amet,
+                    consectetur.
+                </p>
+                <footer class="blockquote-footer">
+                    <small class="text-muted" data-bre-field='{ "name" : "content", "type": "html" }'>
+                        Someone famous in
+                        <cite title="Source Title" data-bre-field='{ "name" : "content", "type": "html" }'>Source Title</cite>
+                    </small>
+                </footer>
+            </blockquote>
+            <img class="card-img-top" src="assets/evs/g3.jpg" alt="Card image cap"
+                data-bre-field='{ "name" : "content", "type": "image" }'>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Card 4" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Card4.PNG"></div>
+        <div class="card box-shadow col-bottom-3-area">
+            <div class="card-body col-4-area">
+              <h4 class="sub-title-2 text-uppercase text-black border-bottom border-width-2 border-color-primary1" data-bre-field='{ "name" : "content", "type": "html" }'>
+                Lorem Ipsum has been standard dummy.
+              </h4>
+              <p data-bre-field='{ "name" : "content", "type": "html" }'>
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <p class="text-center  no-margin" data-bre-field='{ "name" : "content", "type": "html" }'>
+                <a href="#" class="btn btn-small btn-rounded bg-color-primary1 text-white">Lorem Ipsum</a>
+              </p>
+            </div>
+            <img class="card-img-top" src="assets/evs/g4.jpg" alt="Card image cap" data-bre-field='{ "name" : "content", "type": "image" }'>
+          </div>
+        
+    </div>
+
+    <div class="bre-template" data-name="Card 5" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Card5.PNG"></div>
+        <div class="card card-custom bg-color-primary1 col-3-area text-white">
+            <div class="card-body">
+                <h4 class="sub-title-2 text-uppercase" data-bre-field='{ "name" : "content", "type": "html" }'>Lorem Ipsum.</h4>
+                <p class="card-text" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    et dolore magna aliqua.et dolore magna aliqua..
+                </p>
+            </div>
+            <div class="card-footer " data-bre-field='{ "name" : "content", "type": "html" }'>
+                <a href="#" class="btn btn-small btn-rounded bg-color-primary2 text-white">Lorem</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bre-template-group" title="Hover Boxes">
+
+    <div class="bre-template" data-name="Hover 1" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover1_h.PNG"></div>
+        <!-- start section Box hover 01-->
+        <div class="box-hover box-hover-01">
+            <img src="assets/evs/g1.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }' />
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad
+                    adipisci pariatur qui.
+                </p>
+                <ul class="icon">
+                    <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Hover 2" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover4_h.PNG"></div>
+        <div class="box-hover box-hover-04">
+            <img src="assets/evs/g2.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci pariatur qui.
+                </p>
+                <ul class="icon">
+                    <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bre-template" data-name="Hover 3" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover5_h.PNG"></div>
+        <div class="box-hover box-hover-05">
+            <img src="assets/evs/g3.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci pariatur qui.
+                </p>
+                <ul class="icon">
+                    <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bre-template" data-name="Hover 4" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover6_h.PNG"></div>
+        <div class="box-hover box-hover-06">
+            <img src="assets/evs/g4.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <ul class="icon">
+                <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+            </ul>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Dr. Someone - Veterinarian
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bre-template" data-name="Hover 5" data-class="half-width expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover8_h.PNG"></div>
+        <div class="box-hover box-hover-08">
+            <img src="assets/evs/g5.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci pariatur qui.
+                </p>
+                <ul class="icon">
+                    <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bre-template" data-name="Hover 6" data-class="expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover2_h.PNG"></div>
+        <div class="box-hover box-hover-02">
+            <img src="assets/evs/post1.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <hr style="width: 60%; background: white; height: 0;" />
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci pariatur qui.
+                </p>
+                <a href="#" data-bre-field='{ "name" : "link", "type": "link" }'
+                    class="btn btn-small custom-btn-outline custom-btn-outline-3 btn-rounded border-white text-white ">Button
+                    Outline <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bre-template" data-name="Hover 7" data-class="expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover3_h.PNG"></div>
+        <div class="box-hover box-hover-03">
+            <img src="assets/evs/width2.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>LOREM IPSUM</h5>
+                <hr style="width: 30%; background: white; height: 0;" />
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+                <a href="#" data-bre-field='{ "name" : "link", "type": "link" }'
+                    class="btn btn-small custom-btn-outline custom-btn-outline-2 btn-rounded border-white text-white ">Button
+                    Outline <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bre-template" data-name="Hover 8" data-class="expand-on-hover">
+        <div class="bre-template-preview"><img src="assets/evs/templates/Hover7_h.PNG"></div>
+        <div class="box-hover box-hover-07">
+            <img src="assets/evs/width3.jpg" data-bre-field='{ "name" : "content", "type": "image", "allowlink": "false" }'>
+            <div class="box-content">
+                <h5 class="title" data-bre-field='{ "name" : "content", "type": "text" }'>Lorem Ipsum</h5>
+                <p class="description" data-bre-field='{ "name" : "content", "type": "html" }'>
+                    Dr. Someone - Veterinarian
+                </p>
+                <ul class="icon">
+                    <li><a href="#" class="fa fa-thumbs-up" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-heart-o" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                    <li><a href="#" class="fa fa-link" data-bre-field='{ "name" : "link", "type": "link" }'></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="bre-template" data-name="Image">
+    <div class="row">
+        <div class="col-md-12">
+            <img class="figure-img img-fluid" data-bre-field="{ 'name' : 'image', 'type' : 'image', 'src' : 'assets/photo.jpg'}" />
+            </figure>
+        </div>
+    </div>
+</div>
