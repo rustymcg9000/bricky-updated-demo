@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/evs/position.css"/>
   <link rel="stylesheet" href="css/evs/button.css"/>
   <link rel="stylesheet" href="css/evs/box-hover.css"/>
+  <link rel="stylesheet" href="css/evs/carousel.css"/>
 
   <script>
     (function ($) {
@@ -236,6 +237,7 @@
           console.log(data.html);
         }
       });
+
       BrickyEditor.Block.prototype.getActions = function () {
           var block = this;
           if (block.onDelete === undefined) { return null; }
@@ -278,6 +280,53 @@
 
       BrickyEditor.Block.prototype.editAttributes = function () {
         console.log('editAttributes');
+        if (this.ui.$block.hasClass('carousel')) {
+          let left = this.ui.$tools.find('i.fa-edit').parent().css('left');
+          if (this.ui.$tools.find('i.fa-add').length === 0) {
+            let $add = $('<button type="button" style="opacity:1;top:30px;left:' + left + ';width:auto;" class="bre-btn carousel-add"><i class="fa fa-add"></i>&nbsp;Add Slide</button>');
+            $add.on('click', function (ev) {
+              let $tools = $(this).parent();
+              let $carousel = $(this).parents('.bre-block-wrapper').find('div.carousel');
+              let id = $carousel.prop('id');
+              // add the slide indicator
+              let slideCount = $carousel.find('ol.carousel-indicators>li').length;
+              $carousel.find('ol.carousel-indicators').append('<li data-target="#' + id + '" data-slide-to="' + slideCount + '"></li>');
+              // add the slide, copying the last slide
+              let $lastSlide = $($carousel.find('div.carousel-item:last-child').clone());
+              $lastSlide.removeClass('active');
+              $carousel.find('div.carousel-inner').append($lastSlide);
+              $carousel.carousel(slideCount);
+              $carousel.carousel('pause');
+
+              $(this).remove();
+              $tools.find('button.carousel-subtract').remove();
+
+              ev.stopPropagation();
+              return false;
+            });
+
+            this.ui.$tools.append($add);
+
+            let $subtract = $('<button type="button" style="opacity:1;top:60px;left:' + left + ';width:auto;" class="bre-btn carousel-subtract"><i class="fa fa-subtract"></i>&nbsp;Remove Slide</button>');
+            $subtract.on('click', function (ev) {
+              let $tools = $(this).parent();
+              let $carousel = $(this).parents('.bre-block-wrapper').find('div.carousel');
+              // remove the active slide indicator
+              $carousel.find('ol.carousel-indicators>li.active').remove();
+              // remove the active slide
+              $carousel.find('carousel-item.active').remove();
+              $carousel.carousel(0);
+              $carousel.carousel('pause');
+
+              $(this).remove();
+              $tools.find('button.carousel-add').remove();
+
+              ev.stopPropagation();
+              return false;
+            });
+            this.ui.$tools.append($subtract);
+          }
+        }
       };
 
       BrickyEditor.Fields.ImageField.prototype.getPromptParams = function () {
@@ -312,6 +361,11 @@
         .on('mouseleave', '.bre-template.expand-on-hover', function () {
           $('div.half-width-zoom').remove();
         });
+    });
+    $("#editor").on('click','i.fa-subtract', function(evt) {
+        //let targetId = $(this).data('target');
+        //let slideId = $(this).data('slide-to');
+        //$(targetId).carousel(slideId);
     });
   </script>
 </head>
